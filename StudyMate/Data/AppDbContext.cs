@@ -12,8 +12,8 @@ namespace StudyMate.Data
            base(options)
         {
         }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Request> Requests { get; set; }
-        public DbSet<Message> Message { get; set; }
+        //public DbSet<User> Users { get; set; }
+        //public DbSet<Request> Requests { get; set; }
+        //public DbSet<Message> Message { get; set; }
     }
 }
