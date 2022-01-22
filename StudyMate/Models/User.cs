@@ -7,25 +7,6 @@ namespace StudyMate.Models
 {
     public class User
     {
-        public int nuId;
-        public string firstName;
-        public string lastName;
-        public string major;
-        public string emailId;
-        public List<string> intClass;
-        public List<string> skillSets;
-
-        public User()
-        {
-            this.NuId = nuId;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Major = major;
-            this.EmailId = emailId;
-            this.IntClass = intClass;
-            this.SkillSets = skillSets;
-        }
-
         public int NuId { get; set; }
 
         public string FirstName { get; set; }
