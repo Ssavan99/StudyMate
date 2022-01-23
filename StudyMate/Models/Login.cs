@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace StudyMate.Models
 {
-    public class StudentClass
+    public class Login
     {
+        [Key]
+        public int LoginId { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
+
         [ForeignKey("Student")]
         public int StudentId { get; set; }
         public virtual Student Student { get; set; }
-
-        [ForeignKey("Class")]
-        public int ClassId { get; set; }
-        public virtual Class Class { get; set; }
     }
 }
