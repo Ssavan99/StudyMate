@@ -12,22 +12,7 @@
                 <div class="input-group">
                     <form asp-controller="Home" asp-action="Search">
                         <input id="searchString" type="search" class="form-control" placeholder="Find your study mate here....">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="label-icon">Filter</span> <span class="caret">&nbsp;</span></button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul class="filter_filters">
-                                    <li>
-                                        <input class="cat_type filter-input" data-label="All" id="all" value="" name="radios" type="radio"><label for="all">All</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" name="radios" id="Standing Class" value="Standing Class"><label class="category-label" for="Standing Class">Standing Class</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" name="radios" id="Major" value="Major"><label class="category-label" for="Major">Major</label>
-                                    </li>
 
-                                </ul>
-                            </div>
                             <button id="searchBtn" type="button" class="btn btn-secondary btn-search" asp-area="" asp-controller="Home" asp-action="Search"><span class="glyphicon glyphicon-search">&nbsp;</span> <span class="label-icon">Search</span></button>
                     </form>
                 </div>
@@ -36,7 +21,7 @@
         </div>
     </div>
 
-
+  
 
 
 
