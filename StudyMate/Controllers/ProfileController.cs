@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudyMate.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,16 @@ namespace StudyMate.Controllers
 {
     public class ProfileController : Controller
     {
+        private AppDbContext _db;
+
+        public ProfileController(AppDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
-            return View();
+            var student = _db.Students.FirstOrDefault();
+            return View(student);
         }
     }
 }

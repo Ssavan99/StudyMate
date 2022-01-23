@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using StudyMate.Data;
 using StudyMate.Models;
@@ -21,9 +22,37 @@ namespace StudyMate.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            ActionResult actionResult = View();
+            if (ModelState.IsValid)
+            {
+                var studentList = _db.Students.Where(s => s.StudentId > 0);
+                //var newVendor = new SmiPIM.Database.Models.Vendor { Name = vendor.Name };
+                //if(!searchString.Equals(null))
+                //{
+                //    bool containsInt = searchString.Any(char.IsDigit);
+                //    if (!containsInt)
+                //    {
+                //        List<Student> students = _db.Students.Where(s => s.Major == searchString).ToList();
+                //        Console.WriteLine(students);
+                //        if (students.Count == 0)
+                //        {
+                //            return NotFound();
+                //        }
+                //        return Ok(students);
+                //    }
+                //    else
+                //    {
+                //        //find from classes table
+                //    }
+                //}
+                return View(await studentList.ToListAsync());
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()
@@ -37,7 +66,7 @@ namespace StudyMate.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-    [HttpGet]
+        [HttpGet]
         public ActionResult Search(string searchString)
         {
             ActionResult actionResult = View();

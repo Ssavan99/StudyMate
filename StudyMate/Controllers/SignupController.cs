@@ -30,7 +30,7 @@ namespace StudyMate.Controllers
                 _db.Add(newStudent);
                 _db.SaveChanges();
             }
-            return View("Profile");
+            return View(_db.Students.Where(s=> s.Name == Student.Name).First());
         }
     }
 }
