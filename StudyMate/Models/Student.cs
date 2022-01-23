@@ -18,6 +18,7 @@ namespace StudyMate.Models
         public string Major { get; set; }
         public string EmailId { get; set; }
 
+        public string PasswordHash { get; set; }
         public IList<StudentClass> StudentClass { get; set; }
         public IList<RequestSent> RequestSent { get; set; }
 
