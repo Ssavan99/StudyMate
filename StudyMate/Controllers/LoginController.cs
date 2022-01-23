@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static StudyMate.Controllers.DbHelper;
 
 namespace StudyMate.Controllers
 {
@@ -26,12 +27,38 @@ namespace StudyMate.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(Login Login)
+        public async Task<IActionResult> Login(Login Login)
         {
-            IActionResult result = View();
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
+
+            var email = Login.UserEmail;
+            var student = await queryStudent(_db, email);
+
+            if (student == null)
+            {
+                ModelState.AddModelError("Email", "Invalid email or password");
+                return this.View(Login);
+            }
+
+            if (student.PasswordHash == Login.PasswordHash)
+            {
+                var password = Login.PasswordHash;
+                var studentHome = new Student();
+                return RedirectToAction("Index", "Profile", studentHome);
+            }
+            else
+            {
+                ModelState.AddModelError("Email", "Invalid email or password");
+                return this.View();
+            }
+
+            /*IActionResult result = View();
             if (ModelState.IsValid)
             {
-                var student = _db.Logins.Where(l => l.UserEmail == Login.UserEmail).FirstOrDefault<Login>();
+                var student = _db.Students.Where(e => e.EmailId == Login.UserEmail).FirstOrDefault();
                 if (student != null)
                 {
                     result = RedirectToAction("~/Profile");
@@ -40,8 +67,8 @@ namespace StudyMate.Controllers
                     Response.Redirect("");
                     ViewBag.Message = "User does not exist or password did not match.";
                 }
-            }
-            return result;
+            }*/
+
         }
     }
 }
