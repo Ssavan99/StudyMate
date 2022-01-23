@@ -9,3 +9,13 @@ partner.
 - Savan Patel
 - Rachit Sharma
 - Yashaswi Mehra
+
+## References
+We used several tools and code snippets available online to make our project better. Mostly, we used templates to make our frontend better and referenced old projects of our own. Here is a list of references:
+- https://codepen.io/khadkamhn/pen/ZGvPLo 
+- https://codepen.io/ZEESHAN13/pen/LYzRXxQ
+- https://codepen.io/zephyo/pen/maregg 
+- https://codepen.io/creativetim/pen/mzVQrP
+- https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/search?view=aspnetcore-6.0
+- https://github.com/sifatsyed/Spice
+- https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API 
