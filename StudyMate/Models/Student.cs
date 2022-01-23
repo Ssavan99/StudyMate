@@ -12,9 +12,7 @@ namespace StudyMate.Models
         [Key]
         [Column(Order = 1)]
         public int StudentId { get; set; }
-        public int NuId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
         public string Major { get; set; }
         public string EmailId { get; set; }
 

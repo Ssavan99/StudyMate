@@ -11,7 +11,6 @@ namespace StudyMate.Models
     {
         [Key]
         public int LoginId { get; set; }
-
         public string UserEmail { get; set; }
         public string PasswordHash { get; set; }
         public virtual Student Student { get; set; }
