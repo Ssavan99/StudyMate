@@ -18,6 +18,7 @@ namespace StudyMate.Data
         public DbSet<StudentClass> StudentClasses { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Login> Logins { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StudentClass>().HasKey(sc => new { sc.StudentId, sc.ClassId });

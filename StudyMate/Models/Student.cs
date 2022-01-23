@@ -15,6 +15,7 @@ namespace StudyMate.Models
         public string LastName { get; set; }
         public string Major { get; set; }
         public string EmailId { get; set; }
+        public string PasswordHash { get; set; }
         public IList<StudentClass> StudentClass { get; set; }
 
     }
