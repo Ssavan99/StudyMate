@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyMate.Data;
+using StudyMate.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,8 @@ namespace StudyMate.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(Student student)
         {
-            var student = _db.Students.FirstOrDefault();
             return View(student);
         }
     }

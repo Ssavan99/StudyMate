@@ -22,7 +22,7 @@ namespace StudyMate.Controllers
 
         public IActionResult Signup(Student Student)
         {
-            IActionResult actionResult = View();
+            
             if (ModelState.IsValid)
             {
                 //var newVendor = new SmiPIM.Database.Models.Vendor { Name = vendor.Name };
@@ -30,7 +30,7 @@ namespace StudyMate.Controllers
                 _db.Add(newStudent);
                 _db.SaveChanges();
             }
-            return View(_db.Students.Where(s=> s.Name == Student.Name).First());
+            return RedirectToAction("index", "profile", Student);
         }
     }
 }

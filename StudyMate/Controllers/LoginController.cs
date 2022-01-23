@@ -31,10 +31,10 @@ namespace StudyMate.Controllers
             IActionResult result = View();
             if (ModelState.IsValid)
             {
-                var student = _db.Logins.Where(l => l.UserEmail == Login.UserEmail).FirstOrDefault<Login>();
+                var student = _db.Students.Where(l => l.EmailId == Login.UserEmail).FirstOrDefault<Student>();
                 if (student != null)
                 {
-                    result = RedirectToAction("~/Profile");
+                    result = RedirectToAction("index", "profile", student);
                 } else
                 {
                     Response.Redirect("");
