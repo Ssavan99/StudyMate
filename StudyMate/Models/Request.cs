@@ -11,8 +11,14 @@ namespace StudyMate.Models
     {
         [Key]
         public int RequestId { get; set; }
+
+        [ForeignKey("StudentSent")]
         public int SentId { get; set; }
+        [ForeignKey("StudentReceived")]
         public int ReceivedId { get; set; }
+
+        //public virtual Student StudentSent { get; set; }
+        public virtual Student StudentReceived { get; set; }
 
     }
 }
