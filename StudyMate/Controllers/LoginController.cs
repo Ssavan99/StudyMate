@@ -20,6 +20,10 @@ namespace StudyMate.Controllers
         {
             _db = db;
         }
+        public ActionResult Profile()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Login(Login Login)
@@ -27,12 +31,13 @@ namespace StudyMate.Controllers
             IActionResult result = View();
             if (ModelState.IsValid)
             {
-                var student = _db.Logins.Where(l => l.UserEmail == Login.UserEmail && l.PasswordHash == Login.PasswordHash).FirstOrDefault();
+                var student = _db.Logins.Where(l => l.UserEmail == Login.UserEmail).FirstOrDefault<Login>();
                 if (student != null)
                 {
-                    result = RedirectToAction("Profile");
+                    result = RedirectToAction("~/Profile");
                 } else
                 {
+                    Response.Redirect("");
                     ViewBag.Message = "User does not exist or password did not match.";
                 }
             }

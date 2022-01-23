@@ -13,8 +13,6 @@ namespace StudyMate.Models
         public int LoginId { get; set; }
         public string UserEmail { get; set; }
         public string PasswordHash { get; set; }
-        [ForeignKey("Student")]
-        public int StudentId { get; set; }
         public virtual Student Student { get; set; }
     }
 }

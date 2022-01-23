@@ -26,11 +26,11 @@ namespace StudyMate.Controllers
             if (ModelState.IsValid)
             {
                 //var newVendor = new SmiPIM.Database.Models.Vendor { Name = vendor.Name };
-                var newStudent = new Student { FirstName = Student.FirstName, LastName = Student.LastName, EmailId = Student.EmailId, Major = Student.Major, NuId = Student.NuId, PasswordHash = Student.PasswordHash };
+                var newStudent = new Student { Name = Student.Name, EmailId = Student.EmailId, Major = Student.Major, PasswordHash = Student.PasswordHash };
                 _db.Add(newStudent);
                 _db.SaveChanges();
             }
-            return RedirectToAction("Profile");
+            return View("Profile");
         }
     }
 }

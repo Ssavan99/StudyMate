@@ -192,37 +192,31 @@
 <div class="login-wrap">
     <div class="login-html">
          <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Sign Up</label>
-        <div class="login-form">
-            <div class="sign-up-htm">
-                <div class="group">
-                    <label for="firstName" class="label">First Name</label>
-                    <input id="firstName" asp-for="@Model.FirstName" type="text" class="input">
-                </div>
-                <div class="group">
-                    <label for="lastName" class="label">Last Name</label>
-                    <input id="lastName" asp-for="@Model.LastName" type="text" class="input">
-                </div>
-                <div class="group">
-                    <label for="email" class="label">Email Address</label>
-                    <input id="email" asp-for="@Model.EmailId" type="text" class="input">
-                </div>
-                <div class="group">
-                    <label for="major" class="label">Major</label>
-                    <input id="major" asp-for="@Model.Major" type="text" class="input">
-                </div>
-                <div class="group">
-                    <label for="pass" class="label">Password</label>
-                    <input id="pass" asp-for="@Model.PasswordHash" type="password" class="input" data-type="password">
-                </div>
-                <div class="group">
-                    <label for="nuid" class="label">NUID</label>
-                    <input id="nuid" asp-for="@Model.NuId" class="input">
-                </div>
-                <div class="group">
-                    <button type="submit" asp-controller="Signup" asp-action="Signup" class="button">Signup</button>
-                </div>
-                <div class="hr"></div>
-            </div>
+                                                                           <div class="login-form">
+                                                                               <form asp-controller="Signup" asp-action="Signup">
+                                                                                   <div class="sign-up-htm">
+                                                                                       <div class="group">
+                                                                                           <label for="name" class="label">Name</label>
+                                                                                           <input id="name" asp-for="@Model.Name" type="text" class="input">
+                                                                                       </div>
+                                                                                       <div class="group">
+                                                                                           <label for="email" class="label">Email Address</label>
+                                                                                           <input id="email" asp-for="@Model.EmailId" type="text" class="input">
+                                                                                       </div>
+                                                                                       <div class="group">
+                                                                                           <label for="major" class="label">Major</label>
+                                                                                           <input id="major" asp-for="@Model.Major" type="text" class="input">
+                                                                                       </div>
+                                                                                       <div class="group">
+                                                                                           <label for="pass" class="label">Password</label>
+                                                                                           <input id="pass" asp-for="@Model.PasswordHash" type="password" class="input" data-type="password">
+                                                                                       </div>
+                                                                                       <div class="group">
+                                                                                           <button type="submit" class="button">Signup</button>
+                                                                                       </div>
+                                                                               </form>
+                                                                               <div class="hr"></div>
+                                                                           </div>
         </div>
     </div>
 </div>
