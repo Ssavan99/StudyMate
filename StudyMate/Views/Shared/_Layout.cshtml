@@ -1,5 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<style>
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .floatClass {
+        float: right;
+    }
+</style>
+<!DOCTYPE html>
 <html lang="en">
+<style>
+
+</style>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +24,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StudyMate</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Study Mate</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,22 +37,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item floatClass" style ="position:relative; left:75%;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Signup" asp-action="Index">Sign Up</a>
+                        </li>
+                        <li class="nav-item floatClass" style ="position:relative; left:75%;">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - StudyMate - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

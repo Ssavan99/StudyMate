@@ -10,11 +10,10 @@ namespace StudyMate.Models
     {
         [Key]
         public int StudentId { get; set; }
-        public int NuId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
         public string Major { get; set; }
         public string EmailId { get; set; }
+        public string PasswordHash { get; set; }
         public IList<StudentClass> StudentClass { get; set; }
 
     }
